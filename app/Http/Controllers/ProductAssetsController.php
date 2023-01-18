@@ -4,9 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ProductAssets;
-use App\Http\Resources\AssetsResource;
-use App\Http\Requests\StoreProduct_assetsRequest;
-use App\Http\Requests\UpdateProduct_assetsRequest;
+
 
 class ProductAssetsController extends Controller
 {
@@ -18,7 +16,7 @@ class ProductAssetsController extends Controller
         
     }
 
-    public function store(Request $request, ProductAssets $productAssets)
+    public function store(Request $request, ProductAssets $product_assets)
     {
         $request->validate([
             'product_id' => 'required',

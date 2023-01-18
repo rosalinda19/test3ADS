@@ -54,8 +54,9 @@ class CategoriesController extends Controller
     {
         $category->delete();
         return response()->json([
+            'data' => $category,
             'message' => 'Delete data categories success!'
-        ], 204);
+        ]);
        
     }
 }

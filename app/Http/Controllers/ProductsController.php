@@ -63,7 +63,7 @@ class ProductsController extends Controller
         $product->delete();
         return response()->json([
             'data' => $product,
-            'message' =>'dihapus'
+            'message' =>'Delet data Success'
         ]);
     }
 }
