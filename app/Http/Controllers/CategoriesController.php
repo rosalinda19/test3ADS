@@ -31,36 +31,31 @@ class CategoriesController extends Controller
     
     }
 
-    public function show(Categories $categories)
+    public function show(Categories $category)
     {
         return response()->json([
-            'data'=> $categories
+            'data'=> $category
         ]);
-        // return new CategoriesResource(true, 'Data categories found', $categories);
+        
     }
 
-    public function edit(Categories $categories)
+    public function update(Request $request, Categories $category)
     {
-        //
-    }
-
-    public function update(Request $request, Categories $categories)
-    {
-        $categories->name = $request->name;
-        $categories->save();
+        $category->name = $request->name;
+        $category->save();
 
         return response()->json([
-            'data' => $categories
+            'data' => $category
         ]);
-        // return new CategoriesResource(true, 'Update data categories success', $categories);
+        
     }
 
-    public function destroy(Categories $categories)
+    public function destroy(Categories $category)
     {
-        $categories->delete();
+        $category->delete();
         return response()->json([
             'message' => 'Delete data categories success!'
         ], 204);
-        // return new CategoriesResource(true, 'Delete data categories success', $categories);
+       
     }
 }

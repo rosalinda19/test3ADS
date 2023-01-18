@@ -40,29 +40,29 @@ class ProductsController extends Controller
         
     }
 
-    public function show(Products $products)
+    public function show(Products $product)
     {
-        return response()->json(['data' => $products]);
+        return response()->json(['data' => $product]);
     }
 
-    public function update(Request $request, Products $products)
+    public function update(Request $request, Products $product)
     {
 
-        $products->categories_id = $request->categories_id;
-        $products->name = $request->name;
-        $products->slug = $request->slug;
-        $products->price = $request->price;
-        $products->save();
+        $product->categories_id = $request->categories_id;
+        $product->name = $request->name;
+        $product->slug = $request->slug;
+        $product->price = $request->price;
+        $product->save();
         
 
-        return response()->json(['data' => $products]);
+        return response()->json(['data' => $product]);
     }
 
-    public function destroy(Products $products)
+    public function destroy(Products $product)
     {
-        $products->delete();
+        $product->delete();
         return response()->json([
-            'data' => $products,
+            'data' => $product,
             'message' =>'dihapus'
         ]);
     }
