@@ -16,7 +16,8 @@ class ProductsController extends Controller
     public function index()
     {
         //get
-        $products =  Products::get();
+        $products =  Products::orderBy('price', 'DESC')->get();
+        // $products =  Products::get();
         return response()->json(['data' => $products]);
 
     }

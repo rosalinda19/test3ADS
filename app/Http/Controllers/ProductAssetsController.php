@@ -39,8 +39,8 @@ class ProductAssetsController extends Controller
     public function update(Request $request, ProductAssets $product_asset)
     {
         
-        $product_asset->product_id = $request->product_asset;
-        $product_asset->image = $request->product_asset;
+        $product_asset->product_id = $request->product_id;
+        $product_asset->image = $request->image;
         $product_asset->save();
         
         return response()->json(['data' => $product_asset]);
@@ -51,7 +51,7 @@ class ProductAssetsController extends Controller
         $product_asset->delete();
         return response()->json([
             'data' => $product_asset,
-            'message' =>'dihapus'
+            'message' =>'Delete data success'
         ]);
         // return response()->json(['data' => $product_assets]);
     }
