@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Product_assets extends Model
+class ProductAssets extends Model
 {
     use HasFactory;
-    protected $primaryKey = "asset_id";
-    protected $fillable = ["products_id","image"];
+    protected $primaryKey = "assets_id";
+    protected $fillable = ["product_id","image"];
 }

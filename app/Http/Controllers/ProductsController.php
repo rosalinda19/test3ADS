@@ -25,14 +25,14 @@ class ProductsController extends Controller
     {
         $request->validate([
             'categories_id' => 'required',
-            'name' => 'required',
+            'name_products' => 'required',
             'slug' => 'required',
             'price' => 'required',
         ]);
 
         $products = Products::create([
             'categories_id' => $request->categories_id,
-            'name' => $request->name,
+            'name_products' => $request->name_products,
             'slug' => $request->slug,
             'price' => $request->price,
         ]);
@@ -49,7 +49,7 @@ class ProductsController extends Controller
     {
 
         $product->categories_id = $request->categories_id;
-        $product->name = $request->name;
+        $product->name_products = $request->name_products;
         $product->slug = $request->slug;
         $product->price = $request->price;
         $product->save();
